@@ -1,0 +1,8 @@
+Next.js Crash Course for Beginners 2021 - Learn NextJS from Scratch in this 100% Free Tutorial!
+(https://www.youtube.com/watch?v=MFuwkrseXVE&t=37s)
+
+https://github.com/Annie-Huang/nextjs-course
+
+=============================================================================
+
+C:\react>npx create-next-app nextjs-course
