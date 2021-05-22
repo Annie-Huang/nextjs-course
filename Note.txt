@@ -6,3 +6,5 @@ https://github.com/Annie-Huang/nextjs-course
 =============================================================================
 
 C:\react>npx create-next-app nextjs-course
+
+http://localhost:3000/
