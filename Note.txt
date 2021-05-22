@@ -32,4 +32,12 @@ For this structure:
 - pages/new-meetup/index.js
 - pages/[meetupId]/index.js
 When i do http://localhost:3000/new-meetup/, how does it know to go to the first one but not the second one???
+It will. Must be some smart way underneath this does this.
 
+
+UseRouter:
+<button onClick={showDetailsHandler}>Show Details</button>
+const router = useRouter();
+const showDetailsHandler = () => {
+router.push('/' + props.id);
+};
