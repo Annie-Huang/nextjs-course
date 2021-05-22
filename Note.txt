@@ -1,6 +1,7 @@
 Next.js Crash Course for Beginners 2021 - Learn NextJS from Scratch in this 100% Free Tutorial!
 (https://www.youtube.com/watch?v=MFuwkrseXVE&t=37s)
 
+https://github.com/mschwarzmueller/nextjs-course-code/tree/9c9e9f19b1bd27605fb4ccdca2d1a0ebb5c3a802
 https://github.com/Annie-Huang/nextjs-course
 
 =============================================================================
@@ -10,10 +11,11 @@ C:\react>npx create-next-app nextjs-course
 http://localhost:3000/
 http://localhost:3000/news
 
+TutorialPart1:
+--------------------
 For http://localhost:3000/something-important, you can have two ways:
 - pages/news/something-important.js
 - pages/news/something-important/index.js
-
 
 <a href='/news/nextis-is-a-great-framework'>NextJS Is A Great Framework</a> VS
 <Link href='/news/nextis-is-a-great-framework'>NextJS Is A Great Framework<Link>
@@ -21,3 +23,6 @@ If you just use <a href='/news/nextjs-is-a-great-framework'>NextJS Is A Great Fr
  Then when you click the link and then refresh the page, it will come back to news\index.js
  It means you don't have a single page app here. It means that we're always sending a new request
  to the backend to fetch a new html page whenever the user navigates around
+
+TutorialPart2:
+--------------------
