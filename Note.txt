@@ -13,3 +13,11 @@ http://localhost:3000/news
 For http://localhost:3000/something-important, you can have two ways:
 - pages/news/something-important.js
 - pages/news/something-important/index.js
+
+
+<a href='/news/nextis-is-a-great-framework'>NextJS Is A Great Framework</a> VS
+<Link href='/news/nextis-is-a-great-framework'>NextJS Is A Great Framework<Link>
+If you just use <a href='/news/nextjs-is-a-great-framework'>NextJS Is A Great Framework</a>
+ Then when you click the link and then refresh the page, it will come back to news\index.js
+ It means you don't have a single page app here. It means that we're always sending a new request
+ to the backend to fetch a new html page whenever the user navigates around
