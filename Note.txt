@@ -8,3 +8,8 @@ https://github.com/Annie-Huang/nextjs-course
 C:\react>npx create-next-app nextjs-course
 
 http://localhost:3000/
+http://localhost:3000/news
+
+For http://localhost:3000/something-important, you can have two ways:
+- pages/news/something-important.js
+- pages/news/something-important/index.js
