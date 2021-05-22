@@ -24,5 +24,11 @@ If you just use <a href='/news/nextjs-is-a-great-framework'>NextJS Is A Great Fr
  It means you don't have a single page app here. It means that we're always sending a new request
  to the backend to fetch a new html page whenever the user navigates around
 
+
 TutorialPart2:
 --------------------
+For this structure:
+- pages/new-meetup/index.js
+- pages/[meetupId]/index.js
+When i do http://localhost:3000/new-meetup/, how does it know to go to the first one but not the second one???
+
