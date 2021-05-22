@@ -41,3 +41,14 @@ const router = useRouter();
 const showDetailsHandler = () => {
 router.push('/' + props.id);
 };
+
+
+When you just got this:
+  const [loadedMeetups, setLoadedMeetups] = useState([]);
+  useEffect(() => {
+    // send a http request and fetch data
+    setLoadedMeetups(DUMMY_MEETUPS);
+  }, []);
+  return <MeetupList meetups={loadedMeetups} />;
+If you open devtool, you can see the list is empty because the list will only be fetch in the second cycle when the data is fetched from backend.
+Next got a solution for this using page pre-rendering.
