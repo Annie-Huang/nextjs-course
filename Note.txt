@@ -12,8 +12,9 @@ http://localhost:3000/
 http://localhost:3000/news
 http://localhost:3000/new-meetup
 
+
 TutorialPart1:
---------------------
+##########################
 For http://localhost:3000/something-important, you can have two ways:
 - pages/news/something-important.js
 - pages/news/something-important/index.js
@@ -27,7 +28,7 @@ If you just use <a href='/news/nextjs-is-a-great-framework'>NextJS Is A Great Fr
 
 
 TutorialPart2:
---------------------
+##############################
 For this structure:
 - pages/new-meetup/index.js
 - pages/[meetupId]/index.js
@@ -51,4 +52,26 @@ When you just got this:
   }, []);
   return <MeetupList meetups={loadedMeetups} />;
 If you open devtool, you can see the list is empty because the list will only be fetch in the second cycle when the data is fetched from backend.
-Next got a solution for this using page pre-rendering.
+Next got a solution for this using page pre-rendering. The two forms of pre-rendering are:
+- Static Generation
+- Server-side Rendering
+
+
+Static Generation:
+===============================================================
+Need to Build for production, meaning run 'npm run build'
+This is not as bad as it sounds, as the home page content usually doesn't change. And if it changes, you just need to 'npm run build' it again.
+
+!!! This is the best explanation i have so far for the need for getStaticProps() function and how its logic will help.
+
+// If it got the getStaticProps, it will call this to create the props first. Then calling your components and pass the props to your component,
+// hence resolve the problem of when the component is loaded, the data is not fully fetched yet and SEO is not optimized problem.
+//
+// And if you add 'async' to your getStaticProps, The app will force to wait for data as well.
+// This code is executed during the build, not when your app is alive in prod.
+export async function getStaticProps() {
+  // fetch data from API
+  return {
+    props: {},
+  };
+}
