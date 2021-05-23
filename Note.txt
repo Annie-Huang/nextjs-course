@@ -4,10 +4,13 @@ Next.js Crash Course for Beginners 2021 - Learn NextJS from Scratch in this 100%
 https://github.com/mschwarzmueller/nextjs-course-code/tree/9c9e9f19b1bd27605fb4ccdca2d1a0ebb5c3a802
 https://github.com/Annie-Huang/nextjs-course
 
+Notes: pretty much from 2:15:34 when the author starting using MongoDB, i stop working, as my mongodb doesn't seem to work anymore.
+
 =============================================================================
 
 C:\react>npx create-next-app nextjs-course
 C:\react\nextjs-course>npm run build
+C:\react\nextjs-course>npm install mongodb
 
 http://localhost:3000/
 http://localhost:3000/news
