@@ -85,6 +85,24 @@ export async function getStaticProps() {
   };
 }
 
+export async function getStaticProps(context) {
+  /*
+  // Inside getStaticProps(), you cannot access useRouter
+  const router = useRouter();
+  console.log(router.query.newsId); // log what is the newsId value.
+  */
+
+  // When you use context in getServerSideProps(), you can access
+  //   const req = context.req;
+  //   const res = context.res;
+  // When you use context in getStaticProps(), you can access to context.params.
+  const meetupId = context.params.meetupId; // [meetupId]\index.js
+  console.log('meetupId=', meetupId);
+
+  ...
+}
+
+
 
 C:\react\nextjs-course>npm run build
 ===================================================
