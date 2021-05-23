@@ -100,7 +100,7 @@ export async function getStaticProps(context) {
   //   const res = context.res;
   // When you use context in getStaticProps(), you can access to context.params.
   const meetupId = context.params.meetupId; // [meetupId]\index.js
-  console.log('meetupId=', meetupId);
+  console.log('meetupId=', meetupId); // You can see this log in the terminal but not devtool, because it's running in server side during the build time, not client side.
 
   ...
 }
