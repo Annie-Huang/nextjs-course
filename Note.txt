@@ -7,6 +7,7 @@ https://github.com/Annie-Huang/nextjs-course
 =============================================================================
 
 C:\react>npx create-next-app nextjs-course
+C:\react\nextjs-course>npm run build
 
 http://localhost:3000/
 http://localhost:3000/news
@@ -78,3 +79,39 @@ export async function getStaticProps() {
     },
   };
 }
+
+
+C:\react\nextjs-course>npm run build
+===================================================
+> nextjs-course@0.1.0 build
+> next build
+
+info  - Using webpack 5. Reason: no next.config.js https://nextjs.org/docs/messages/webpack5
+info  - Checking validity of types
+info  - Creating an optimized production build
+info  - Compiled successfully
+info  - Collecting page data
+info  - Generating static pages (5/5)
+info  - Finalizing page optimization
+
+Page                                Size     First Load JS
+┌ ● /                               706 B          65.3 kB              -----------> Can see the pages/index.js will SSG because it got getStaticProps
+├   └ css/ce6cc3e08121e47e98c0.css  415 B
+├   /_app                           0 B            64.6 kB
+├ ○ /[meetupId]                     525 B          65.1 kB              -----------> Later on we will change this to SSG as well.
+├   └ css/445f2ce76c30a93838c1.css  81 B
+├ ○ /404                            3.06 kB        67.7 kB
+└ ○ /new-meetup                     760 B          65.4 kB
+    └ css/530dd67eed06dd6c8d39.css  360 B
++ First Load JS shared by all       64.6 kB
+  ├ chunks/framework.64eb71.js      42 kB
+  ├ chunks/main.899697.js           19.4 kB
+  ├ chunks/pages/_app.5c12a6.js     2.15 kB
+  ├ chunks/webpack.189c53.js        994 B
+  └ css/7041f14f84ec62a71651.css    467 B
+
+λ  (Server)  server-side renders at runtime (uses getInitialProps or getServerSideProps)
+○  (Static)  automatically rendered as static HTML (uses no initial props)
+●  (SSG)     automatically generated as static HTML + JSON (uses getStaticProps)
+   (ISR)     incremental static regeneration (uses revalidate in getStaticProps)
+
