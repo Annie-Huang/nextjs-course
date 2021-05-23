@@ -115,3 +115,18 @@ Page                                Size     First Load JS
 ●  (SSG)     automatically generated as static HTML + JSON (uses getStaticProps)
    (ISR)     incremental static regeneration (uses revalidate in getStaticProps)
 
+
+Incremental static regeneration (IRS):
+==============================================================
+// The Page will occasionally be re-pre-generated on the server after deployment so that you don't have to redeploy and rebuilt all
+// time just because some data changes.
+// revalidate: 10 means retrieve again if it's more than 10 seconds from the previous request.
+export async function getStaticProps() {
+  // fetch data from API
+  return {
+    props: {
+      meetups: DUMMY_MEETUPS,
+    },
+    revalidate: 10,
+  };
+}

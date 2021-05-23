@@ -36,12 +36,18 @@ const HomePage = (props) => {
 // And if you add 'async' to your getStaticProps, The app will force to wait for data as well.
 // This code is executed during the build, not when your app is alive in prod.
 // When you open devtool after using getStateProps, you will see the ul>li got the details of the meetup info
+//
+// Incremental static regeneration (IRS):
+// The Page will occasionally be re-pre-generated on the server after deployment so that you don't have to redeploy and rebuilt all
+// time just because some data changes.
+// revalidate: 10 means retrieve again if it's more than 10 seconds from the previous request.
 export async function getStaticProps() {
   // fetch data from API
   return {
     props: {
       meetups: DUMMY_MEETUPS,
     },
+    revalidate: 10,
   };
 }
 
