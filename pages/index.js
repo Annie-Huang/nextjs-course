@@ -53,6 +53,7 @@ export async function getStaticProps() {
   };
 }
 
+/*
 // Server-Side Rendering (SSR)
 // getServerSideProps will make the call to server for every request that comes in. The page is really pre-generated for every incoming request.
 // When you open google devtool, you can also see all the data is there in ul>li
@@ -78,5 +79,6 @@ export async function getServerSideProps(context) {
     props: { meetups: DUMMY_MEETUPS },
   };
 }
+*/
 
 export default HomePage;
