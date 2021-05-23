@@ -20,15 +20,14 @@ const DUMMY_MEETUPS = [
   },
 ];
 
-const HomePage = () => {
-  const [loadedMeetups, setLoadedMeetups] = useState([]);
+const HomePage = (props) => {
+  // const [loadedMeetups, setLoadedMeetups] = useState([]);
+  // useEffect(() => {
+  //   // send a http request and fetch data
+  //   setLoadedMeetups(DUMMY_MEETUPS);
+  // }, []);
 
-  useEffect(() => {
-    // send a http request and fetch data
-    setLoadedMeetups(DUMMY_MEETUPS);
-  }, []);
-
-  return <MeetupList meetups={loadedMeetups} />;
+  return <MeetupList meetups={props.meetups} />;
 };
 
 // If it got the getStaticProps, it will call this to create the props first. Then calling your components and pass the props to your component,
@@ -36,10 +35,13 @@ const HomePage = () => {
 //
 // And if you add 'async' to your getStaticProps, The app will force to wait for data as well.
 // This code is executed during the build, not when your app is alive in prod.
+// When you open devtool after using getStateProps, you will see the ul>li got the details of the meetup info
 export async function getStaticProps() {
   // fetch data from API
   return {
-    props: {},
+    props: {
+      meetups: DUMMY_MEETUPS,
+    },
   };
 }
 

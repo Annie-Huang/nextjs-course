@@ -69,9 +69,12 @@ This is not as bad as it sounds, as the home page content usually doesn't change
 //
 // And if you add 'async' to your getStaticProps, The app will force to wait for data as well.
 // This code is executed during the build, not when your app is alive in prod.
+// When you open devtool after using getStateProps, you will see the ul>li got the details of the meetup info
 export async function getStaticProps() {
   // fetch data from API
   return {
-    props: {},
+    props: {
+      meetups: DUMMY_MEETUPS,
+    },
   };
 }
