@@ -12,6 +12,25 @@ const MeetupDetails = () => {
   );
 };
 
+// Error: getStaticPaths is required for dynamic SSG pages and is missing for '/[meetupId]'.
+// Need to pre-generate for all the urls for all the meetupId values users might be entering.
+// If user enters an id for which we didn't pre-generate a page they will see a 404 error.
+//
+// So we need to add getStaticPath which has the job of returning an object where we describe all the dynamic segment values
+// so all the meetup ids in this case for which this page should be pre-generated.
+//
+// fallback: false -> says your path contains all supported meetup id values. It means if the user enters anything that's not supported here,
+// e.g. m3, he or she will see a 404 error.
+// fallback: true -> says your path contains ONLY some of supported meetup id values. next.js would try to generate a page for this meetupId dynamically on the server for the incoming request (m3)
+//
+export async function getStaticPaths() {
+  // Need to have paths, params, meetupId.
+  return {
+    paths: [{ params: { meetupId: 'm1' } }, { params: { meetupId: 'm2' } }],
+    fallback: false,
+  };
+}
+
 export async function getStaticProps(context) {
   /*
   // Inside getStaticProps(), you cannot access useRouter
