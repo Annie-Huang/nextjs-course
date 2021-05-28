@@ -1,6 +1,6 @@
 import MeetupDetail from '../../components/meetups/MeetupDetail';
 import { useRouter } from 'next/router';
-// import { MongoClient } from 'mongodb';
+// import { MongoClient, ObjectId } from 'mongodb';
 
 /*
 // If you are getting the data from the DB, you should retrieve it through props
@@ -51,6 +51,8 @@ export async function getStaticPaths() {
   // Only fetch the _id field.
   const meetups = await meetupsCollection.find({}, { _id: 1 }).toArray();
 
+  client.close();
+
   return {
     paths: meetups.map((meetup) => ({
       params: { meetupId: meetup._id.toString() },
@@ -90,14 +92,20 @@ export async function getStaticProps(context) {
   const meetupsCollection = db.collection('meetups');
 
   const selectedMeetup = await meetupsCollection
-    .findOne({ _id: meetupId })
+    .findOne({ _id: ObjectId(meetupId) })
     .toArray();
 
   client.close();
 
   return {
     props: {
-      meetupData: selectedMeetup,
+      meetupData: {
+        id: selectedMeetup._id.toString(),
+        title: selectedMeetup.title,
+        address: selectedMeetup.address,
+        image: selectedMeetup.image,
+        description: selectedMeetup.description,
+      },
     },
   };
   */
