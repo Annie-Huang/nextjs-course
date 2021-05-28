@@ -1,6 +1,6 @@
 import MeetupList from '../components/meetups/MeetupList.js';
 import { useEffect, useState } from 'react';
-import { MongoClient } from 'mongodb';
+// import { MongoClient } from 'mongodb';
 
 const DUMMY_MEETUPS = [
   {
