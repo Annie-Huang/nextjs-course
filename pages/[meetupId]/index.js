@@ -1,5 +1,6 @@
 import MeetupDetail from '../../components/meetups/MeetupDetail';
 import { useRouter } from 'next/router';
+import { MongoClient } from 'mongodb';
 
 const MeetupDetails = () => {
   return (
@@ -24,6 +25,28 @@ const MeetupDetails = () => {
 // fallback: true -> says your path contains ONLY some of supported meetup id values. next.js would try to generate a page for this meetupId dynamically on the server for the incoming request (m3)
 //
 export async function getStaticPaths() {
+  /*
+  // If we need to connect to the DB...
+  // Similar to C:\react\nextjs-course\pages\index.js
+  // Next is smart enough to see the DB connection under the getStaticPaths() and not include it in the client bundle so your credential in the code is safe
+  const client = await MongoClient.connect(
+    'mongodb+srv://annie:<password>@testcluster1-4fb1w.mongodb.net/test?retryWrites=true&w=majority'
+  );
+  const db = client.db();
+
+  const meetupsCollection = db.collection('meetups');
+
+  // Only fetch the _id field.
+  const meetups = await meetupsCollection.find({}, { _id: 1 }).toArray();
+
+  return {
+    paths: meetups.map((meetup) => ({
+      params: { meetupId: meetup._id.toString() },
+    })),
+    fallback: false,
+  };
+*/
+
   // Need to have paths, params, meetupId.
   return {
     paths: [{ params: { meetupId: 'm1' } }, { params: { meetupId: 'm2' } }],
