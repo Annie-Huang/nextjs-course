@@ -1,5 +1,6 @@
 import MeetupList from '../components/meetups/MeetupList.js';
 import { useEffect, useState } from 'react';
+import { MongoClient } from 'mongodb';
 
 const DUMMY_MEETUPS = [
   {
@@ -47,6 +48,34 @@ const HomePage = (props) => {
 // revalidate: 10 means retrieve again if it's more than 10 seconds from the previous request.
 export async function getStaticProps() {
   // fetch data from API
+
+  /*
+  // If we need to connect to the DB...
+  // Next is smart enough to see the DB connection under the getStaticProps() and not include it in the client bundle so your credential in the code is safe
+  const client = await MongoClient.connect(
+    'mongodb+srv://annie:<password>@testcluster1-4fb1w.mongodb.net/test?retryWrites=true&w=majority'
+  );
+  const db = client.db();
+
+  const meetupsCollection = db.collection('meetups');
+
+  const meetups = await meetupsCollection.find().toArray();
+
+  client.close();
+
+  return {
+    props: {
+      meetups: meetups.map((meetup) => ({
+        title: meetup.title,
+        address: meetup.address,
+        image: meetup.image,
+        id: meetup._id.toString(),
+      })),
+    },
+    revalidate: 10,
+  };
+*/
+
   return {
     props: { meetups: DUMMY_MEETUPS },
     revalidate: 10,
