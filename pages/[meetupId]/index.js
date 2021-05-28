@@ -68,6 +68,28 @@ export async function getStaticProps(context) {
   const meetupId = context.params.meetupId; // [meetupId]\index.js
   console.log('meetupId=', meetupId); // You can see this log in the terminal but not devtool, because it's running in server side during the build time, not client side.
 
+  /*
+  // Fetch specific meetupId if we can connect to DB
+  const client = await MongoClient.connect(
+    'mongodb+srv://annie:<password>@testcluster1-4fb1w.mongodb.net/test?retryWrites=true&w=majority'
+  );
+  const db = client.db();
+
+  const meetupsCollection = db.collection('meetups');
+
+  const selectedMeetup = await meetupsCollection
+    .findOne({ _id: meetupId })
+    .toArray();
+
+  client.close();
+
+  return {
+    props: {
+      meetupData: selectedMeetup,
+    },
+  };
+  */
+
   // fetch data from API
   return {
     props: {
