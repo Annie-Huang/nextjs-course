@@ -2,6 +2,18 @@ import MeetupDetail from '../../components/meetups/MeetupDetail';
 import { useRouter } from 'next/router';
 // import { MongoClient } from 'mongodb';
 
+/*
+// If you are getting the data from the DB, you should retrieve it through props
+const MeetupDetails = (props) => {
+  return (
+    <MeetupDetail
+      image={props.meetupData.image}
+      title={props.meetupData.title}
+      address={props.meetupData.address}
+      description={props.meetupData.title}
+    />
+  );
+};*/
 const MeetupDetails = () => {
   return (
     <MeetupDetail
