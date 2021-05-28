@@ -1,6 +1,6 @@
 import MeetupDetail from '../../components/meetups/MeetupDetail';
 import { useRouter } from 'next/router';
-import { MongoClient } from 'mongodb';
+// import { MongoClient } from 'mongodb';
 
 const MeetupDetails = () => {
   return (
