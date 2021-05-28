@@ -5,6 +5,8 @@ https://github.com/mschwarzmueller/nextjs-course-code/tree/9c9e9f19b1bd27605fb4c
 https://github.com/Annie-Huang/nextjs-course
 
 Notes: pretty much from 2:15:34 when the author starting using MongoDB, i stop working, as my mongodb doesn't seem to work anymore.
+If you set this up correctly, you should be able to enter new meetup info and save it in to mongodb.
+But it doesn't stop you from viewing existing mock meetup data.
 
 =============================================================================
 
