@@ -1,6 +1,7 @@
 import MeetupList from '../components/meetups/MeetupList.js';
 import { useEffect, useState } from 'react';
 // import { MongoClient } from 'mongodb';
+import Head from 'next/head';
 
 const DUMMY_MEETUPS = [
   {
@@ -28,7 +29,18 @@ const HomePage = (props) => {
   //   setLoadedMeetups(DUMMY_MEETUPS);
   // }, []);
 
-  return <MeetupList meetups={props.meetups} />;
+  return (
+    <>
+      <Head>
+        <title>React Meetups</title>
+        <meta
+          name='description'
+          content='Browse a huge list of highly active React meetups!'
+        />
+      </Head>
+      <MeetupList meetups={props.meetups} />
+    </>
+  );
 };
 
 // If it got the getStaticProps, it will call this to create the props first. Then calling your components and pass the props to your component,

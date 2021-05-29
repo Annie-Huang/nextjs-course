@@ -1,27 +1,39 @@
 import MeetupDetail from '../../components/meetups/MeetupDetail';
 import { useRouter } from 'next/router';
+import Head from 'next/head';
 // import { MongoClient, ObjectId } from 'mongodb';
 
-/*
-// If you are getting the data from the DB, you should retrieve it through props
+/*// If you are getting the data from the DB, you should retrieve it through props
 const MeetupDetails = (props) => {
   return (
-    <MeetupDetail
-      image={props.meetupData.image}
-      title={props.meetupData.title}
-      address={props.meetupData.address}
-      description={props.meetupData.title}
-    />
+    <>
+      <Head>
+        <title>{props.meetupData.title}</title>
+        <meta name='description' content={props.meetupData.description} />
+      </Head>
+      <MeetupDetail
+        image={props.meetupData.image}
+        title={props.meetupData.title}
+        address={props.meetupData.address}
+        description={props.meetupData.title}
+      />
+    </>
   );
 };*/
 const MeetupDetails = () => {
   return (
-    <MeetupDetail
-      image='https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Stadtbild_M%C3%BCnchen.jpg/1280px-Stadtbild_M%C3%BCnchen.jpg'
-      title='A First Meetup'
-      address='Some Street 5, Some City'
-      description='The meetup description'
-    />
+    <>
+      <Head>
+        <title>XXX</title>
+        <meta name='description' content='YYYY' />
+      </Head>
+      <MeetupDetail
+        image='https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Stadtbild_M%C3%BCnchen.jpg/1280px-Stadtbild_M%C3%BCnchen.jpg'
+        title='A First Meetup'
+        address='Some Street 5, Some City'
+        description='The meetup description'
+      />
+    </>
   );
 };
 
